@@ -32,7 +32,7 @@ const useWeather = () => {
             })
 
             // const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_WEATHER_API_KEY}`);
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=84cb0aab497caa19c1619f8df5efdfc6`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=84cb0aab497caa19c1619f8df5efdfc6&units=metric`);
             if (!response.ok) {
                 const errorMessage = `fetching weather data failed ${response.status}`;
                 throw new Error(errorMessage);
