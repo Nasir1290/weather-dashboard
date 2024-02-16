@@ -11,7 +11,7 @@ const getFormattedDateTime = (value,type,inMS) => {
             weekday:"long",
             year:"numeric",
             month:"long",
-            day:"long"
+            day:"numeric"
         }
     }else if(type === "time") {
         options = {
@@ -19,4 +19,7 @@ const getFormattedDateTime = (value,type,inMS) => {
             minute:"numeric",
         }
     }
+
+    return new Intl.DateTimeFormat('en-US', options).format(date)
 }
+export {getFormattedDateTime};
