@@ -17,7 +17,7 @@ export default function WeatherCondition() {
     wind,
     cloudPercentage,
     climate,
-  } = weatherData
+  } = weatherData;
   return (
     <div>
       <p className="text-sm lg:text-lg font-bold uppercase mb-8">
