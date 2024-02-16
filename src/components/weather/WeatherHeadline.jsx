@@ -12,9 +12,10 @@ import ThunderImage from "../../assets/thunder.svg";
 import PinImage from "../../assets/pin.svg";
 
 export default function WeatherHeadline() {
-  const { weatherData, isLoading, error } = useContext(weatherContext);
+  const { weatherData } = useContext(weatherContext);
   const { climate, location, temperature, time } = weatherData;
 
+  
   const getWeatherIcon = (climate) => {
     switch (climate) {
       case "Rain":

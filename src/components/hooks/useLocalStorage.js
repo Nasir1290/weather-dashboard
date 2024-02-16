@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
 
 const useLocalStorage = (storageKey,defaultValue) => {
-    const [value,setValue] = useState(JSON.parse(localStorage.getItem(storageKey))?? defaultValue);
+    const [favourites, setFavourites] = useState(JSON.parse(localStorage.getItem(storageKey))?? defaultValue);
 
     useEffect(() => {
-        localStorage.setItem(storageKey, JSON.stringify(value));
-    },[value,storageKey]);
+        localStorage.setItem(storageKey, JSON.stringify(favourites));
+        
+    },[favourites,storageKey]);
 
-    return {value,setValue}
+    return {favourites,setFavourites}
 }
 export default useLocalStorage
