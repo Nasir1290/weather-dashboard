@@ -1,5 +1,5 @@
 import React from "react";
-import HeartImage from "../../assets/heart.svg";
+import HeartImage from "../../assets/heart-red.svg";
 
 import { favouriteContext } from "../../context";
 
@@ -9,7 +9,7 @@ export default function Favourite({onShow}) {
     onClick={onShow}
     >
       <img src={HeartImage} alt="favourite" />
-      <span>Favourite Locations</span>
+      <span><b>Favourite Locations</b></span>
     </div>
   );
 }
