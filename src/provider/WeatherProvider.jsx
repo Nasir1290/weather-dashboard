@@ -7,4 +7,3 @@ export default function WeatherProvider({ children }) {
   return <weatherContext.Provider value={{weatherData,error,isLoading}}>{children}</weatherContext.Provider>;
 }
 
-export {WeatherProvider};
