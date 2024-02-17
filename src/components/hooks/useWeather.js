@@ -33,7 +33,7 @@ const useWeather = () => {
             setIsLoading({
                 ...isLoading,
                 state: true,
-                message: "Fetching Weather Data..."
+                message: "Loading...."
             })
 
             // const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_WEATHER_API_KEY}`);
