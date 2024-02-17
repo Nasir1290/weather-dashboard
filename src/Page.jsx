@@ -39,18 +39,10 @@ export default function Page() {
     }
   };
 
-  console.log(getBackgroundImage("Clouds"))
-  console.log(weatherData.climate)
-
   useEffect(() => {
     const bgImage = getBackgroundImage(weatherData.climate);
     setClimate(bgImage);
-    console.log(bgImage)
-    console.log("object")
   }, [weatherData.climate]);
-
-
-
 
   return (
     <div
