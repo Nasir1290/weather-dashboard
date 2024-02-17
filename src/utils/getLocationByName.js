@@ -4,7 +4,7 @@ const getLocationByName = async (location) => {
         return null;
     }
     try {
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location},{country code}&limit=1&appid=84cb0aab497caa19c1619f8df5efdfc6
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${location},{country code}&limit=1&appid=84cb0aab497caa19c1619f8df5efdfc6
         `)
         const result = await response.json();
         
