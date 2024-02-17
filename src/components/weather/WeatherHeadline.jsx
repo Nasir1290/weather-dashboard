@@ -15,7 +15,6 @@ export default function WeatherHeadline() {
   const { weatherData } = useContext(weatherContext);
   const { climate, location, temperature, time } = weatherData;
 
-  
   const getWeatherIcon = (climate) => {
     switch (climate) {
       case "Rain":
@@ -38,6 +37,22 @@ export default function WeatherHeadline() {
         return SunnyImage;
     }
   };
+
+  const getLatitudeLongitude = async () => {
+    const response = await fetch(
+      `http://api.openweathermap.org/geo/1.0/direct?q=Dhaka&appid=84cb0aab497caa19c1619f8df5efdfc6
+      `
+    );
+    if (response) {
+      const data = await response.json();
+      console.log(data[0].lat);
+    } else {
+      console.log("Error occured while fetching data");
+    }
+  };
+
+  getLatitudeLongitude();
+
   return (
     <div>
       <div className="max-md:flex items-center justify-between md:-mt-10">
