@@ -1,6 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { locationContext } from "../../context";
 
 const useWeather = () => {
+
+    const { searcedLocation } = useContext(locationContext);
+
+
     const [weatherData, setWeatherData] = useState({
         location: "",
         climate: "",
@@ -78,10 +83,17 @@ const useWeather = () => {
             state: true,
             message: "Finding Location...",
         })
-        navigator.geolocation.getCurrentPosition((position) => {
-            fetchWeatherData(position.coords.latitude, position.coords.longitude);
-        })
-    }, [])
+
+        if (searcedLocation.latitude && searcedLocation.longitude) {
+            fetchWeatherData(searcedLocation.latitude, searcedLocation.longitude);
+        }
+        else {
+
+            navigator.geolocation.getCurrentPosition((position) => {
+                fetchWeatherData(position.coords.latitude, position.coords.longitude);
+            })
+        }
+    }, [searcedLocation])
 
     return {
         weatherData,

@@ -38,28 +38,13 @@ export default function WeatherHeadline() {
     }
   };
 
-  const getLatitudeLongitude = async () => {
-    const response = await fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=Dhaka&appid=84cb0aab497caa19c1619f8df5efdfc6
-      `
-    );
-    if (response) {
-      const data = await response.json();
-      console.log(data[0].lat);
-    } else {
-      console.log("Error occured while fetching data");
-    }
-  };
-
-  getLatitudeLongitude();
-
   return (
     <div>
       <div className="max-md:flex items-center justify-between md:-mt-10">
         <img src={getWeatherIcon(climate)} alt="cloud" />
         <div className="max-md:flex items-center max-md:space-x-4">
           <h1 className="text-[60px] lg:text-[80px] xl:text-[100px] leading-none md:mb-4">
-            {Math.round(temperature)}°
+            {Math.round(temperature > 0 ? temperature : 5)}°
           </h1>
           <div className="flex items-center space-x-4 md:mb-4">
             <img src={PinImage} alt="pin" />
